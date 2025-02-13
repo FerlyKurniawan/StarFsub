@@ -112,7 +112,7 @@ def capture_callback(func):
             exc_type, exc_value, exc_traceback = sys.exc_info()
             errors = traceback.format_exception(exc_type, exc_value, exc_traceback)
             error_feedback = split_limits(
-                "❌**ERROR BANGSAT @KENAPANAN** | `{}`\n\n<pre>{}</pre>".format(
+                "❌**ERROR BANGSAT @Akwcuy** | `{}`\n\n<pre>{}</pre>".format(
                     (
                         0
                         if not cq.from_user
@@ -317,7 +317,7 @@ class HANDLER:
                     return
                 else:
                     return await message.reply(
-                        "<blockquote><b>Maaf, masa aktif Bot Fsub Anda sudah habis!!\nSilahkan kontak @kenapanan untuk memperpanjang masa aktif bot.</b></blockquote>"
+                        "<blockquote><b>Maaf, masa aktif Bot Fsub Anda sudah habis!!\nSilahkan kontak @Akwcuy untuk memperpanjang masa aktif bot.</b></blockquote>"
                     )
             return await func(client, message)
 
