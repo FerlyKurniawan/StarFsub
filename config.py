@@ -11,7 +11,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "7596196348:AAFhMDE1SoCxgr364u36eiVHmKN2lnN7h
 BOT_ID = int(os.getenv("BOT_ID", "7596196348"))
 DB_NAME = os.getenv("DB_NAME", "FSUB")
 ADMIN_IDS = [1506027871]
-LOG_GRUP = int(os.getenv("LOG_GRUP", -1001950473715))
+LOG_GRUP = int(os.getenv("LOG_GRUP", -1002451566653))
 AKSES_DEPLOY = list(
     map(
         int,
