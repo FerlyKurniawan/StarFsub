@@ -1,7 +1,9 @@
 # FSUB
 
 # 📡 Install via Linux (VPS)
-Ini Panduan buat install bot fsub di linux (VPS) 
+
+Panduan lengkap untuk menginstall dan menjalankan `bot fsub` dengan mudah di VPS berbasis Linux.
+Dapat berjalan dibackground dengan aman untuk project menengah dan skala lebih besar.
 
 ## 1. Pastikan update & upgrade vps nya
 ```
@@ -58,3 +60,24 @@ pip install git+https://github.com/naya1503/mypyrogram@dev
 ```
 bash start.sh
 ```
+
+## 10. Detacted screen
+biar berjalan dilatar belakang
+```
+Ctrl + A lalu tekan D
+```
+
+## ⚠️ Catatan
+- Pastikan install `pyrogram` khusus bot ini
+- Detacted pada step ke `10` agar bot berjalan di background
+- Pastikan 1 bot hanya 1 screen
+
+---
+
+## ⚙️Command untuk monitoring bot
+
+### # Buka screen
+```
+screen -r Fsub-Gacor
+```
+ini buat masuk ke screen, jangan lupa `detacted` lagi setelah dibuka
