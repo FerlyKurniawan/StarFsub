@@ -1,5 +1,3 @@
-# FSUB
-
 # 📡 Install via Linux (VPS)
 
 Panduan lengkap untuk menginstall dan menjalankan `bot fsub` dengan mudah di VPS berbasis Linux.
