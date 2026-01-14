@@ -37,7 +37,7 @@ SUDO_OWNERS = list(
         int,
         os.environ.get(
             "SUDO_OWNERS",
-            "7650122497",
+            "7973892808",
         ).split(),
     )
 )
@@ -47,12 +47,12 @@ DEVS = list(
         int,
         os.environ.get(
             "DEVS",
-            "7650122497",
+            "7973892808",
         ).split(),
     )
 )
 
-OWNER_ID = int(os.environ.get("OWNER_ID", "7650122497"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7973892808"))
 
 LOG_GRUP = int(os.getenv("LOG_GRUP", -1002657451736))
 
