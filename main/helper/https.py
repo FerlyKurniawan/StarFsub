@@ -14,7 +14,7 @@ fetch = AsyncClient(
 
 
 async def upload_media(media):
-    base_url = "https://catbox.moe/user/api.php"
+    base_url = "https://0x0.st"
     async with aiohttp.ClientSession() as session:
         form_data = aiohttp.FormData()
         form_data.add_field("reqtype", "fileupload")
