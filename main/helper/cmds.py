@@ -112,7 +112,7 @@ def capture_callback(func):
             exc_type, exc_value, exc_traceback = sys.exc_info()
             errors = traceback.format_exception(exc_type, exc_value, exc_traceback)
             error_feedback = split_limits(
-                "❌**ERROR BANGSAT @Akwcuy** | `{}`\n\n<pre>{}</pre>".format(
+                "❌**ERROR BANGSAT @ydhnii** | `{}`\n\n<pre>{}</pre>".format(
                     (
                         0
                         if not cq.from_user
