@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "KN-userbot"
+    return "Star Userbot"
 
 
 if __name__ == "__main__":
