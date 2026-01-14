@@ -3,6 +3,7 @@ tgcrypto
 uvloop
 tornado
 aiosignal
+git+https://github.com/naya1503/hydrogram@dev
 git+https://github.com/FerlyKurniawan/pyrogram@master
 pyromod==1.1.0
 pytz
