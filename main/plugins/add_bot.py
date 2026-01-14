@@ -44,21 +44,36 @@ async def setExpiredUser(user_id, _fsub):
 async def _(client, message):
     owner = DB.get_var(client.me.id, "OWNER")
     adm = DB.get_list_from_var(client.me.id, "ADMINS")
+
     if message.from_user.id not in adm and message.from_user.id != owner:
         return
+
     bahan = await client.ask(
         message.from_user.id,
         "<b>Silahkan kirim gambar anda untuk diatur menjadi gambar konten.</b>",
         filters=filters.photo,
         reply_markup=ReplyKeyboardRemove(),
     )
-    # if await cancel(message, bahan.text):
-    # return
+
     bahan2 = await client.download_media(bahan)
+
+    # 🔍 CEK FILE ADA
+    if not bahan2:
+        return await message.reply("❌ Gagal mengunduh gambar.")
+
+    await message.reply("⏳ Mengupload gambar, mohon tunggu...")
+
     konten = await upload_media(bahan2)
+
+    # ❌ UPLOAD GAGAL
+    if not konten:
+        return await message.reply("❌ Upload gambar gagal (timeout / server error).")
+
     DB.set_var(client.me.id, "PIC_KONTEN", konten)
+
     return await message.reply(
-        f"**Gambar konten anda diatur ke:\n{konten}", disable_web_page_preview=True
+        f"✅ **Gambar konten berhasil diatur:**\n{konten}",
+        disable_web_page_preview=True
     )
 
 
