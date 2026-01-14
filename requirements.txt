@@ -46,3 +46,6 @@ speechrecognition
 browser-cookie-3x
 TgCrypto2
 google-generativeai
+tornado
+gunicorn==20.1.0
+flask
