@@ -17,7 +17,7 @@ AKSES_DEPLOY = list(
         int,
         os.getenv(
             "AKSES_DEPLOY",
-            "1506027871",
+            "7973892808", "7650122497"
         ).split(),
     )
 )
