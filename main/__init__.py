@@ -1,3 +1,5 @@
+import asyncio
+
 import uvloop
 
 try:
@@ -5,8 +7,6 @@ try:
 except RuntimeError:
     asyncio.set_event_loop(asyncio.new_event_loop())
 
-
-import asyncio
 import importlib
 import logging
 import os
