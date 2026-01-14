@@ -317,7 +317,7 @@ class HANDLER:
                     return
                 else:
                     return await message.reply(
-                        "<blockquote><b>Maaf, masa aktif Bot Fsub Anda sudah habis!!\nSilahkan kontak @Akwcuy untuk memperpanjang masa aktif bot.</b></blockquote>"
+                        "<blockquote><b>Maaf, masa aktif Bot Fsub Anda sudah habis!!\nSilahkan kontak @ydhnii untuk memperpanjang masa aktif bot.</b></blockquote>"
                     )
             return await func(client, message)
 
