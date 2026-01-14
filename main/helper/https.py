@@ -1,7 +1,44 @@
 import aiofiles
+import os
 import aiohttp
 from httpx import AsyncClient, Timeout
 
+
+
+TELEGRAPH_UPLOAD = "https://telegra.ph/upload"
+
+async def upload_media(file_path: str):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError("File tidak ditemukan")
+
+    if os.path.getsize(file_path) > 5 * 1024 * 1024:
+        raise Exception("Ukuran file melebihi 5MB (batas Telegraph)")
+
+    async with aiohttp.ClientSession(
+        timeout=aiohttp.ClientTimeout(total=60)
+    ) as session:
+        with open(file_path, "rb") as f:
+            data = aiohttp.FormData()
+            data.add_field(
+                "file",
+                f,
+                filename=os.path.basename(file_path),
+                content_type="application/octet-stream"
+            )
+
+            async with session.post(TELEGRAPH_UPLOAD, data=data) as resp:
+                if resp.status != 200:
+                    raise Exception(f"Telegraph error {resp.status}")
+
+                result = await resp.json()
+
+                if not result or "src" not in result[0]:
+                    raise Exception("Upload Telegraph gagal")
+
+                return "https://telegra.ph" + result[0]["src"]
+
+
+"""
 fetch = AsyncClient(
     http2=True,
     verify=False,
@@ -33,7 +70,7 @@ async def upload_media(media):
             return (await response.text()).strip()
 
 
-"""
+
 async def upload_media(media):
     # media = await m.reply_to_message.download()
     url = "https://itzpire.com/tools/upload"
