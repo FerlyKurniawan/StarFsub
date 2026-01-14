@@ -3,7 +3,7 @@ tgcrypto
 uvloop
 tornado
 aiosignal
-git+https://github.com/navycodes/pyrogram
+git+https://github.com/FerlyKurniawan/pyrogram@master
 pyromod==1.1.0
 pytz
 croniter
