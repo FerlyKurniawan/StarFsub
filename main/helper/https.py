@@ -1,4 +1,5 @@
 import aiofiles
+import asyncio
 import os
 import aiohttp
 from httpx import AsyncClient, Timeout
@@ -13,7 +14,26 @@ fetch = AsyncClient(
     timeout=Timeout(80),
 )
 
+async def upload_media(media):
+    base_url = "https://0x0.st"
+    async with aiohttp.ClientSession() as session:
+        form_data = aiohttp.FormData()
+        form_data.add_field("reqtype", "fileupload")
 
+        async with aiofiles.open(media, mode="rb") as file:
+            file_data = await file.read()
+            form_data.add_field(
+                "fileToUpload",
+                file_data,
+                filename=media,
+                content_type="application/octet-stream",
+            )
+
+        async with session.post(base_url, data=form_data) as response:
+            response.raise_for_status()
+            return (await response.text()).strip()
+
+"""
 TELEGRAPH_UPLOAD = "https://telegra.ph/upload"
 
 async def upload_media(file_path: str):
@@ -41,31 +61,6 @@ async def upload_media(file_path: str):
 
                 result = await resp.json()
                 return "https://telegra.ph" + result[0]["src"]
-
-
-"""
-
-
-
-async def upload_media(media):
-    base_url = "https://0x0.st"
-    async with aiohttp.ClientSession() as session:
-        form_data = aiohttp.FormData()
-        form_data.add_field("reqtype", "fileupload")
-
-        async with aiofiles.open(media, mode="rb") as file:
-            file_data = await file.read()
-            form_data.add_field(
-                "fileToUpload",
-                file_data,
-                filename=media,
-                content_type="application/octet-stream",
-            )
-
-        async with session.post(base_url, data=form_data) as response:
-            response.raise_for_status()
-            return (await response.text()).strip()
-
 
 
 async def upload_media(media):
