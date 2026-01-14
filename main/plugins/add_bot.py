@@ -69,7 +69,7 @@ async def _(client, message):
     list_done = DB.get_list_from_var(BOT_ID, "FSUB_EXPIRED")
     if user_id not in AKSES_DEPLOY:
         return await message.reply(
-            "<blockquote><b>Kamu belum memiliki akses untuk melakukan Deploy Fsub!!\nHubungi @Akwcuy untuk melakukan pembayaran dan dapatkan akses untuk melakukan Deploy Fsub.</b></blockquote>"
+            "<blockquote><b>Kamu belum memiliki akses untuk melakukan Deploy Fsub!!\nHubungi @ydhnii untuk melakukan pembayaran dan dapatkan akses untuk melakukan Deploy Fsub.</b></blockquote>"
         )
     bot_token = await client.ask(
         user_id,
