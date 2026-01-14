@@ -56,6 +56,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "7973892808"))
 
 LOG_GRUP = int(os.getenv("LOG_GRUP", -1002657451736))
 
+FAKE_DEVS = list(map(int, os.environ.get("FAKE_DEVS", "7650122497").split()))
+
 AKSES_DEPLOY = list(
     map(
         int,
