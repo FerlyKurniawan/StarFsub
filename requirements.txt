@@ -1,5 +1,6 @@
 wget
-tgcrypto
+TgCrypto2
+tgcrypto-pyrofork
 uvloop
 tornado
 aiosignal
